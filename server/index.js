@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken')
 const app = express()
 
 const jwtKey = 'my_jwt_key'
+const PORT = process.env.PORT || 5000
 
 app.use(
 	cors({
@@ -177,6 +178,6 @@ app.delete('/todo', async (req, res) => {
 	}
 })
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
 	console.log('Server Running')
 })
