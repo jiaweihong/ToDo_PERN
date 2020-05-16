@@ -2,10 +2,11 @@ const express = require('express')
 const cors = require('cors')
 const pool = require('./db')
 const jwt = require('jsonwebtoken')
+const dotenv = require('dotenv').config()
 
 const app = express()
 
-const jwtKey = 'my_jwt_key'
+const jwtKey = process.env.JWT_SECRET_Key
 const PORT = process.env.PORT || 5000
 
 app.use(
