@@ -174,9 +174,9 @@ app.delete('/todo', async (req, res) => {
 })
 
 // Catch all error page
-// app.get('*', (req, res) => {
-// 	res.sendFile(path.join(__dirname, 'client/build/index.html'))
-// })
+app.get('/error', (req, res) => {
+	res.sendFile(path.join(__dirname, 'client/build'))
+})
 
 app.listen(PORT, () => {
 	console.log('Server Running')
