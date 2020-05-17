@@ -1,4 +1,4 @@
-CREATE DATABASE todo_db;
+-- CREATE DATABASE todo_db;
 
 CREATE TABLE account(
     account_id SERIAL PRIMARY KEY,
