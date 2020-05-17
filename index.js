@@ -70,18 +70,6 @@ app.post('/account/authenticate', async (req, res) => {
 	}
 })
 
-app.post('/decode', async (req, res) => {
-	try {
-		const { token } = req.body
-
-		const decoded = jwt.verify(token, jwtKey)
-
-		res.json({ account_id: `${decoded.account_id}` })
-	} catch (error) {
-		console.error(error)
-	}
-})
-
 //Create a todo
 app.post('/todo', async (req, res) => {
 	try {
@@ -182,6 +170,10 @@ app.delete('/todo', async (req, res) => {
 	} catch (error) {
 		console.error(error)
 	}
+})
+
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, 'client/build/index.html'))
 })
 
 app.listen(PORT, () => {
