@@ -22,7 +22,7 @@ app.use(express.json())
 
 // Loads static files from the build file
 if (process.env.NODE_ENV === 'production') {
-	app.use(express.static(path.join(__dirname, 'client/build')))
+	app.use(express.static(path.join(__dirname, 'client', 'build')))
 }
 
 // Create an account
@@ -175,7 +175,7 @@ app.delete('/todo', async (req, res) => {
 
 // Catch all error page
 app.get('/error', (req, res) => {
-	res.sendFile(path.join(__dirname, 'client/build'))
+	res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
 })
 
 app.listen(PORT, () => {
