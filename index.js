@@ -19,6 +19,11 @@ app.use(
 // which allows us to access the key-value pairs sent to us in the request
 app.use(express.json())
 
+// Loads static files from the build file
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static(path.join(__dirname, 'client/build')))
+}
+
 // Create an account
 app.post('/account', async (req, res) => {
 	try {
