@@ -22,8 +22,12 @@ app.use(express.json())
 
 // Loads static files from the build file
 if (process.env.NODE_ENV === 'production') {
+	console.log('production')
 	app.use(express.static(path.join(__dirname, 'client', 'build')))
 }
+
+console.log(PORT)
+console.log(process.env.NODE_ENV)
 
 // Create an account
 app.post('/account', async (req, res) => {
