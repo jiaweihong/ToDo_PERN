@@ -23,11 +23,9 @@ app.use(express.json())
 // Loads static files from the build file
 if (process.env.NODE_ENV === 'production') {
 	console.log('production')
-	app.use(express.static(path.join(__dirname, 'client', 'build')))
+	// app.use(express.static(path.join(__dirname, 'client', 'build')))
+	app.use(express.static('client/build'))
 }
-
-console.log(PORT)
-console.log(process.env.NODE_ENV)
 
 // Create an account
 app.post('/account', async (req, res) => {
@@ -179,7 +177,11 @@ app.delete('/todo', async (req, res) => {
 
 // Catch all error page
 app.get('/error', (req, res) => {
-	res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+	console.log('catch all')
+	console.log(path.resolve(__dirname, 'client', 'build', 'index.html'))
+	console.log(path.join(__dirname, 'client', 'build', 'index.html'))
+	// res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
 })
 
 app.listen(PORT, () => {
