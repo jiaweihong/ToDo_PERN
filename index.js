@@ -3,6 +3,7 @@ const cors = require('cors')
 const pool = require('./db')
 const jwt = require('jsonwebtoken')
 const dotenv = require('dotenv').config()
+const path = require('path')
 
 const app = express()
 
