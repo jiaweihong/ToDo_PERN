@@ -179,7 +179,9 @@ app.delete('/todo', async (req, res) => {
 
 // Catch all error page
 app.get('*', (req, res) => {
+	console.log(4)
 	res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+	console.log(5)
 })
 
 app.listen(PORT, () => {
