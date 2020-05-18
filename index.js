@@ -3,7 +3,6 @@ const cors = require('cors')
 const pool = require('./db')
 const jwt = require('jsonwebtoken')
 const dotenv = require('dotenv').config()
-const path = require('path')
 
 const app = express()
 
@@ -22,11 +21,7 @@ app.use(express.json())
 
 // Loads static files from the build file
 if (process.env.NODE_ENV === 'production') {
-	console.log('production')
-	console.log(path.resolve(__dirname, 'client', 'build', 'index.html'))
-	console.log(path.join(__dirname, 'client', 'build', 'index.html'))
 	app.use(express.static(path.join(__dirname, 'client', 'build')))
-	// app.use(express.static('client/build'))
 }
 
 // Create an account
@@ -179,9 +174,7 @@ app.delete('/todo', async (req, res) => {
 
 // Catch all error page
 app.get('/error', (req, res) => {
-	console.log('catch all')
 	res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
-	// res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
 })
 
 app.listen(PORT, () => {
