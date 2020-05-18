@@ -184,6 +184,10 @@ app.get('*', (req, res) => {
 	console.log(5)
 })
 
+app.get('/fix', (req, res) => {
+	res.end('fixed')
+})
+
 app.listen(PORT, () => {
 	console.log('Server Running')
 })
