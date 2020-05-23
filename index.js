@@ -7,7 +7,7 @@ const path = require('path')
 
 const app = express()
 
-const jwtKey = process.env.JWT_SECRET_Key
+const jwtKey = process.env.JWT_SECRET_KEY
 const PORT = process.env.PORT || 5000
 
 app.use(
@@ -53,7 +53,6 @@ app.post('/account', async (req, res) => {
 
 // Sign in with JWT
 app.post('/account/authenticate', async (req, res) => {
-	return res.send(jwtKey)
 	try {
 		const { username, password } = req.body
 
