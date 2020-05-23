@@ -22,7 +22,13 @@ app.use(express.json())
 
 // Loads static files from the build file
 if (process.env.NODE_ENV === 'production') {
-	app.use(express.static(path.join(__dirname, 'client', 'build')))
+	app.use(express.static('client/build'))
+
+	// Catch all error page
+	// This forwards all HTTP get requests to client's index
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+	})
 }
 
 // Create an account
@@ -171,12 +177,6 @@ app.delete('/todo', async (req, res) => {
 	} catch (error) {
 		console.error(error)
 	}
-})
-
-// Catch all error page
-// This forwards all HTTP get requests to client's index
-app.get('*', (req, res) => {
-	res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
 })
 
 app.listen(PORT, () => {
