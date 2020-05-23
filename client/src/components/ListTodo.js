@@ -12,6 +12,7 @@ const ListTodo = () => {
 	useEffect(() => {
 		if (isLoggedIn) {
 			getTodos()
+			console.log(todos)
 		}
 	}, [])
 
@@ -46,6 +47,7 @@ const ListTodo = () => {
 					</tr>
 				</thead>
 				<tbody>
+					{console.log(todos)}
 					{todos.map((todo) => {
 						return (
 							<tr key={todo.todo_id}>
