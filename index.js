@@ -74,7 +74,7 @@ app.post('/account/authenticate', async (req, res) => {
 		res.json({ token: `${token}` })
 	} catch (error) {
 		console.error(error)
-		return res.json(error)
+		return res.send(error)
 	}
 })
 
