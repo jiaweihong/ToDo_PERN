@@ -9,12 +9,12 @@ const ListTodo = () => {
 	const { isLoggedIn } = useContext(LoggedInContext)
 
 	// So that when the page reloads, it will automatically call getTodos
-	useEffect(() => {
-		if (isLoggedIn) {
-			getTodos()
-			console.log(todos)
-		}
-	}, [])
+	// useEffect(() => {
+	// 	if (isLoggedIn) {
+	// 		getTodos()
+	// 		console.log(todos)
+	// 	}
+	// }, [])
 
 	const deleteTodo = (todo) => {
 		axios({
