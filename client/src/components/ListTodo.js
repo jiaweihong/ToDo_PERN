@@ -47,12 +47,7 @@ const ListTodo = () => {
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>{todos}</td>
-						<td>{todos}</td>
-						<td>{todos}</td>
-					</tr>
-					{[].map(() => {
+					{[].map((todo) => {
 						return (
 							// <tr key={todo.todo_id}>
 							// 	<td class="w-50">{todo.description}</td>
@@ -71,9 +66,9 @@ const ListTodo = () => {
 							// 	</td>
 							// </tr>
 							<tr>
-								<td>1</td>
-								<td>1</td>
-								<td>1</td>
+								<td>{todo}</td>
+								<td>{todo}</td>
+								<td>{todo}</td>
 							</tr>
 						)
 					})}
