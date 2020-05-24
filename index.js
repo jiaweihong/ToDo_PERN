@@ -74,7 +74,6 @@ app.post('/account/authenticate', async (req, res) => {
 		res.json({ token: `${token}` })
 	} catch (error) {
 		console.error(error)
-		return res.send(error)
 	}
 })
 
@@ -106,6 +105,7 @@ app.post('/todo', async (req, res) => {
 
 // Get all todo
 app.get('/todos', async (req, res) => {
+	console.log('here')
 	try {
 		const token = req.header('authorization')
 		console.log(token)
@@ -130,6 +130,7 @@ app.get('/todos', async (req, res) => {
 		// So we want the entire array instead of rows[0]
 		res.json(getTodos.rows)
 	} catch (error) {
+		console.log('error here')
 		console.log(error)
 	}
 })
