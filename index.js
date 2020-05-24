@@ -44,6 +44,8 @@ app.post('/account', async (req, res) => {
 			[username, email, password]
 		)
 
+		console.log('created')
+
 		// newAccount.row[0] gives just the information of the query that was added
 		res.json(newAccount.rows[0])
 	} catch (error) {
