@@ -52,26 +52,31 @@ const ListTodo = () => {
 						<td>{todos}</td>
 						<td>{todos}</td>
 					</tr>
-					{/* {todos.map((todo) => {
+					{[].map(() => {
 						return (
-							<tr key={todo.todo_id}>
-								<td class="w-50">{todo.description}</td>
-								<td>
-									<EditTodo todo={todo} getTodos={getTodos} />
-								</td>
-								<td>
-									<button
-										className="btn btn-warning"
-										onClick={() => {
-											deleteTodo(todo)
-										}}
-									>
-										Delete
-									</button>
-								</td>
+							// <tr key={todo.todo_id}>
+							// 	<td class="w-50">{todo.description}</td>
+							// 	<td>
+							// 		<EditTodo todo={todo} getTodos={getTodos} />
+							// 	</td>
+							// 	<td>
+							// 		<button
+							// 			className="btn btn-warning"
+							// 			onClick={() => {
+							// 				deleteTodo(todo)
+							// 			}}
+							// 		>
+							// 			Delete
+							// 		</button>
+							// 	</td>
+							// </tr>
+							<tr>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
 							</tr>
 						)
-					})} */}
+					})}
 				</tbody>
 			</table>
 		</div>
