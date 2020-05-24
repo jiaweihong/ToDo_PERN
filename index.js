@@ -108,6 +108,7 @@ app.post('/todo', async (req, res) => {
 app.get('/todos', async (req, res) => {
 	try {
 		const token = req.header('authorization')
+		console.log(token)
 
 		if (token === 'null') {
 			return res.status(401).end()
@@ -116,10 +117,14 @@ app.get('/todos', async (req, res) => {
 		const decoded = jwt.verify(token, jwtKey)
 		const account_id = decoded.account_id
 
+		console.log(decoded)
+		console.log(account_id)
+
 		const getTodos = await pool.query(
 			'SELECT * FROM todo WHERE account_id = $1',
 			[account_id]
 		)
+		console.log(getTodos)
 
 		// The values of the rows key is an array of todos
 		// So we want the entire array instead of rows[0]
