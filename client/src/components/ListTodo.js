@@ -47,8 +47,12 @@ const ListTodo = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{console.log(todos)}
-					{todos.map((todo) => {
+					<tr>
+						<td>{todos}</td>
+						<td>{todos}</td>
+						<td>{todos}</td>
+					</tr>
+					{/* {todos.map((todo) => {
 						return (
 							<tr key={todo.todo_id}>
 								<td class="w-50">{todo.description}</td>
@@ -67,7 +71,7 @@ const ListTodo = () => {
 								</td>
 							</tr>
 						)
-					})}
+					})} */}
 				</tbody>
 			</table>
 		</div>
