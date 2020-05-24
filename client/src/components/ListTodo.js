@@ -47,6 +47,7 @@ const ListTodo = () => {
 					</tr>
 				</thead>
 				<tbody>
+					{todos ? console.log('truthy') : console.log('falsy')}
 					{console.log(typeof todos)}
 					{todos.map((todo) => {
 						return (
@@ -66,6 +67,7 @@ const ListTodo = () => {
 									</button>
 								</td>
 								{console.log(todo)}
+								{console.log(typeof todo)}
 							</tr>
 						)
 					})}
