@@ -35,7 +35,7 @@ const ListTodo = () => {
 				console.log(err)
 			})
 	}
-	console.log(todo)
+
 	return (
 		<div className="ml-5 mr-5 mt-3">
 			<table className="table">
