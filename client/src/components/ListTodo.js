@@ -35,7 +35,7 @@ const ListTodo = () => {
 				console.log(err)
 			})
 	}
-
+	console.log(todo)
 	return (
 		<div className="ml-5 mr-5 mt-3">
 			<table className="table">
@@ -47,28 +47,25 @@ const ListTodo = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{[].map((todo) => {
+					{console.log(typeof todos)}
+					{todos.map((todo) => {
 						return (
-							// <tr key={todo.todo_id}>
-							// 	<td class="w-50">{todo.description}</td>
-							// 	<td>
-							// 		<EditTodo todo={todo} getTodos={getTodos} />
-							// 	</td>
-							// 	<td>
-							// 		<button
-							// 			className="btn btn-warning"
-							// 			onClick={() => {
-							// 				deleteTodo(todo)
-							// 			}}
-							// 		>
-							// 			Delete
-							// 		</button>
-							// 	</td>
-							// </tr>
-							<tr>
-								<td>{todo}</td>
-								<td>{todo}</td>
-								<td>{todo}</td>
+							<tr key={todo.todo_id}>
+								<td class="w-50">{todo.description}</td>
+								<td>
+									<EditTodo todo={todo} getTodos={getTodos} />
+								</td>
+								<td>
+									<button
+										className="btn btn-warning"
+										onClick={() => {
+											deleteTodo(todo)
+										}}
+									>
+										Delete
+									</button>
+								</td>
+								{console.log(todo)}
 							</tr>
 						)
 					})}
