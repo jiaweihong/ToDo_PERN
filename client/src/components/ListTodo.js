@@ -12,7 +12,6 @@ const ListTodo = () => {
 	useEffect(() => {
 		if (isLoggedIn) {
 			getTodos()
-			console.log(todos)
 		}
 	}, [])
 	//problem right now is that when it calls gettodos again, it triggers error 304 cuz there is already a cached version with no changes
