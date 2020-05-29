@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Create an account
-app.post('/account', async (req, res) => {
+app.post('/api/account', async (req, res) => {
 	try {
 		const { username } = req.body
 		const { email } = req.body
@@ -54,7 +54,7 @@ app.post('/account', async (req, res) => {
 })
 
 // Sign in with JWT
-app.post('/account/authenticate', async (req, res) => {
+app.post('/api/account/authenticate', async (req, res) => {
 	try {
 		const { username, password } = req.body
 
@@ -80,7 +80,7 @@ app.post('/account/authenticate', async (req, res) => {
 })
 
 //Create a todo
-app.post('/todo', async (req, res) => {
+app.post('/api/todo', async (req, res) => {
 	try {
 		const token = req.header('authorization')
 		const { description } = req.body
@@ -106,8 +106,7 @@ app.post('/todo', async (req, res) => {
 })
 
 // Get all todo
-app.get('/todos', async (req, res) => {
-	console.log('here')
+app.get('/api/todos', async (req, res) => {
 	try {
 		const token = req.header('authorization')
 		console.log(token)
@@ -132,13 +131,12 @@ app.get('/todos', async (req, res) => {
 		// So we want the entire array instead of rows[0]
 		res.json(getTodos.rows)
 	} catch (error) {
-		console.log('error here')
 		console.log(error)
 	}
 })
 
 // Update a todo
-app.put('/todo', async (req, res) => {
+app.put('/api/todo', async (req, res) => {
 	try {
 		const token = req.header('authorization')
 
@@ -164,7 +162,7 @@ app.put('/todo', async (req, res) => {
 })
 
 // Delete a todo
-app.delete('/todo', async (req, res) => {
+app.delete('/api/todo', async (req, res) => {
 	try {
 		const token = req.header('authorization')
 

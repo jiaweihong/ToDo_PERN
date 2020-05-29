@@ -15,7 +15,7 @@ const InputTodo = () => {
 				'Content-Type': 'application/json',
 				Authorization: `${localStorage.getItem('jwt')}`,
 			},
-			url: '/todo',
+			url: '/api/todo',
 			data: {
 				description: description,
 			},

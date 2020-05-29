@@ -9,17 +9,18 @@ const ListTodo = () => {
 	const { isLoggedIn } = useContext(LoggedInContext)
 
 	// So that when the page reloads, it will automatically call getTodos
-	// useEffect(() => {
-	// 	if (isLoggedIn) {
-	// 		getTodos()
-	// 		console.log(todos)
-	// 	}
-	// }, [])
+	useEffect(() => {
+		if (isLoggedIn) {
+			getTodos()
+			console.log(todos)
+		}
+	}, [])
+	//problem right now is that when it calls gettodos again, it triggers error 304 cuz there is already a cached version with no changes
 
 	const deleteTodo = (todo) => {
 		axios({
 			method: 'DELETE',
-			url: '/todo',
+			url: '/api/todo',
 			headers: {
 				Authorization: `${localStorage.getItem('jwt')}`,
 			},

@@ -92,7 +92,7 @@ const NavBar = () => {
 		axios({
 			method: 'POST',
 			header: 'Content-Type: application/json',
-			url: '/account',
+			url: '/api/account',
 			data: {
 				email: signInEmail,
 				username: signInUsername,
@@ -143,7 +143,7 @@ const NavBar = () => {
 		axios({
 			method: 'POST',
 			header: 'Content-Type: application/json',
-			url: '/account/authenticate',
+			url: '/api/account/authenticate',
 			data: {
 				username: loginUsername,
 				password: loginPassword,

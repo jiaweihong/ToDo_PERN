@@ -21,7 +21,7 @@ const EditTodo = (props) => {
 		e.preventDefault()
 		axios({
 			method: 'PUT',
-			url: '/todo',
+			url: '/api/todo',
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization: `${localStorage.getItem('jwt')}`,
