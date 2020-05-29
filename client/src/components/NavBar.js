@@ -87,6 +87,12 @@ const NavBar = () => {
 		}
 	}
 
+	const resetFormFeedback = () => {
+		setSignInUsernameValid({ valid: null, invalid: null })
+		setSignInEmailValid({ valid: null, invalid: null })
+		setSignInPasswordValid({ valid: null, invalid: null })
+	}
+
 	// To make send a sign up request to database
 	const sendSignUpRequest = () => {
 		axios({
@@ -102,6 +108,7 @@ const NavBar = () => {
 			.then((res) => {
 				console.log(res)
 				setSignUpModal(false)
+				resetFormFeedback()
 				toast.success('🦄 Sign Up Succesful!', {
 					position: 'top-right',
 					autoClose: 5000,
@@ -288,6 +295,7 @@ const NavBar = () => {
 											color="danger"
 											onClick={() => {
 												setSignUpModal(false)
+												resetFormFeedback()
 											}}
 										>
 											Cancel
