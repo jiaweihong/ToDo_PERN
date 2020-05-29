@@ -25,6 +25,7 @@ const App = () => {
 			},
 		})
 			.then((response) => {
+				console.log(response)
 				console.log(response.data)
 				setTodos(response.data)
 			})
