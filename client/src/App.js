@@ -19,7 +19,7 @@ const App = () => {
 	const getTodos = () => {
 		axios({
 			method: 'GET',
-			url: '/todos',
+			url: '/api/todos',
 			headers: {
 				Authorization: `${localStorage.getItem('jwt')}`,
 			},
