@@ -150,6 +150,7 @@ const NavBar = () => {
 			},
 		})
 			.then((response) => {
+				console.log(response)
 				console.log(response.data.token)
 				localStorage.setItem('jwt', response.data.token)
 				getTodos()
