@@ -4,6 +4,11 @@ A simple to-do app that requires users to sign up so that their 'to-dos' will be
 
 To-Do Website: https://pern-todo-jw.herokuapp.com/
 
+
+Technologies used:
+
 Frontend: React
+
 Backend: Node.js
+
 Database: Postgresql
